@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    char c;
-    c = getchar();
-    putchar(c);
+    int c;
+    while((c = getchar()) != EOF)
+        putchar(c);
     return 0;
 }
