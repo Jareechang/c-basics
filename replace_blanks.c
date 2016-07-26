@@ -15,8 +15,6 @@ int main()
             }
         } else {
             putchar(c);
-            // replace string 
-            // reset counter 
         }
         lastc = c;
     }
