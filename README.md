@@ -22,7 +22,7 @@ ex. `printf("6.1f", 32.423232);`
 
 putchar is a function that writes a single character to the standard output stream.
 
-*Detecting backspace \b*
+**Detecting backspace \b**
 
 Apparently, in c program, you can't catch catch '\b' from standard in as it is connected to the 
 interactive device (serial terminal or console window).
