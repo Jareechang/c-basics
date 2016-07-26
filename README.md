@@ -14,11 +14,11 @@ Data types:
 ex. `printf("6.1f", 32.423232);`
 
 
-*Long integer* - int (long integers) are at least 32 bits. On some systems, `int` and `long` are the same size. 
+**Long integer** - int (long integers) are at least 32 bits. On some systems, `int` and `long` are the same size. 
 
 ## Methods 
 
-*putchar()*
+**putchar()**
 
 putchar is a function that writes a single character to the standard output stream.
 
