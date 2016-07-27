@@ -38,6 +38,10 @@ int main()
         }
     }
 
+    /* Spaces */
+    printf(" \n");
+    printf(" \n");
+
     for(hist_len = max_hist_len; hist_len >= 0; hist_len--) {
         strcpy(display_str, "");
         // Max height of histogram
@@ -50,8 +54,12 @@ int main()
                 strcat(display_str, "   ");
             }
         }
-        printf("%s\n", display_str);
+        /* output histogram at each level */
+        printf("%s \n", display_str);
     }
+
+    /* Divider */
+    printf(" -----------------------------------------------------------------------\n");
 
     for(x = 1; x <= MAX; x++) {
         printf(" %d ", x);
