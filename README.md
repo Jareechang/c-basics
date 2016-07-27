@@ -27,3 +27,13 @@ putchar is a function that writes a single character to the standard output stre
 Apparently, in c program, you can't catch catch '\b' from standard in as it is connected to the 
 interactive device (serial terminal or console window).
 
+**Chars in C**
+
+In C, a char is the "smallest addressable unit of machine that can contain basic character set. It is an integer type."
+
+Char is equivalent to "one-byte-long integer", so they can hold values between [0, 255].
+
+To convert a digit's character set to the digit value itself, you can rely on the property of the character sets
+that digits are always stored sequentially and increasingly and just subtract by '0' (ASCII eqv - 48).
+
+
