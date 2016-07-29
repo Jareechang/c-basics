@@ -1,20 +1,23 @@
 #include <stdio.h>
 
-#define MAXLINE 1000
-
-int not_blank(char c);
+int reverse(char str);
+int is_blank
 
 int main()
 {
     int c;
-    char transformed_str[MAXLINE];
 
     while((c = getchar()) != EOF) {
-        if(is_blank(c)) {
-            putchar(c);
-        }     
+        // Each letters
+        if(is_)
+
     }
-    return 0;
+
+}
+
+int reverse(char str) 
+{
+
 }
 
 int not_blank(char c)
