@@ -1,0 +1,6 @@
+stuff
+more stuff
+/* comment */
+even more stuff
+/* comment */
+// style 1 comment
