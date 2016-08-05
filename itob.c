@@ -11,7 +11,6 @@ int main()
 {
     char str[20];
     itob(17, str, 16);
-    printf("result: %s \n", str);
     return 0;
 }
 
@@ -94,8 +93,6 @@ void reduce(int n, int base, char s[], int prev)
     } else {
         s[j++] = '1';
     }
-    /*printf("(outside) m: %d, total: %d, prev: %d\n", m, total, prev);*/
-    printf("bin str: %s\n", s);
 }
 
 void convert_hex(int n,int orig, char s[], int b)
