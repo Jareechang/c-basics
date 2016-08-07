@@ -3,8 +3,9 @@
 
 
 double atof (char s[]); 
-int is_digit(int digit);
+int digit(int digit);
 int get_sign(char s[]);
+int scientific_notation(char s[]);
 
 int main() 
 {
@@ -15,18 +16,21 @@ int main()
 double atof (char s[])
 {
     // Example -10.0
-    double res, sig, decimal_figures, m;
+    double res, num, decimal_figures, m;
     int i, power, sign, e_sign, e_power;
-    power = m = 10;
-    i = sig = decimal_figures = e_power = 0;
+    double scientific_figures = 0.0;
 
-    sign = (s[i] == '-') ? -1 : 1;
+    power = m = 10;
+    i = num = decimal_figures = e_power = 0;
+
+    sign = get_sign(&s[i]);
+
     if(s[i] == '-' || s[i] == '+') {
         i++;
     }
 
-    while(is_digit(s[i])) {
-        sig = (sig * power) + (s[i] - '0');
+    while(digit(s[i])) {
+        num = (num * power) + (s[i] - '0');
         i++;
     }
 
@@ -34,26 +38,27 @@ double atof (char s[])
         i++;
     }
 
-    if(is_digit(s[i])) {
-        while(is_digit(s[i])) {
+    if(digit(s[i])) {
+        while(digit(s[i])) {
             decimal_figures = decimal_figures + ((s[i] - '0') / m);
             m *= 10;
             i++;
         }
     }
 
-    if(s[i++] == 'e' || s[i++] == 'E') {
+    if(scientific_notation(&s[i++])) {
         e_sign = get_sign(&s[i]);
         if(s[i] == '-' || s[i] == '+') {
             i++;
         }
-        while(is_digit(s[i]) && s[i] != '\0') {
+        while(digit(s[i])) {
             e_power = (e_power * power) + (s[i] - '0');
             i++;
         }
+        scientific_figures = pow(10, e_sign * e_power); /* Calculate the scientific figures */
     }
 
-    return (sign * (sig + decimal_figures)) * pow(10, e_sign * e_power);
+    return (sign * (num + decimal_figures)) * scientific_figures;
 }
 
 int get_sign(char s[]) 
@@ -61,7 +66,12 @@ int get_sign(char s[])
     return (*s == '-') ? -1 : 1;
 }
 
-int is_digit(int digit) 
+int scientific_notation(char s[])
+{
+   return *s == 'e' || *s == 'E';
+}
+
+int digit(int digit) 
 {
     return (digit >= '0' && digit <= '9');
 }
