@@ -1,15 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-
+#include "calc.h"
 #define MAXOP 100
-#define NUMBER '0'
-
-int getop(char []);
-
-void push(double);
-double pop(void);
-int digit(int d);
 
 /* reverse polish calc */
 int main()
@@ -55,84 +47,5 @@ int main()
         }
     }
     return 0;
-}
-
-#define MAXVAL 100
-
-int sp = 0;
-double val[MAXVAL];
-
-/* push f value into stack */
-void push(double f)
-{
-    if(sp < MAXVAL) {
-        val[sp++] = f;
-    } else {
-        printf("error: stack full, can't push %g\n", f);
-    }
-}
-
-/* pop and return value form the stack */
-double pop(void)
-{
-    if(sp > 0) {
-        return val[--sp];
-    } else {
-        printf("error: stack empty\n");
-        return 0.0;
-    }
-}
-
-
-#include <ctype.h> /* included for getch and ungetch */
-
-int getch(void);
-void ungetch(int);
-/* getop: get the next operator */
-
-int getop(char s[])
-{
-    int i,c;
-
-    while((s[0] = c = getch()) == ' ' || c == '\t')
-        ;
-
-    s[1] = '\0';
-    if(!isdigit(c) && c != '.') {
-        return c; // not a number
-    }
-    i = 0;
-    if(isdigit(c)) {
-        while(isdigit(s[++i] = c = getch()))
-            ;
-    }
-
-    if(c == '.') {
-        while(isdigit(s[++i] = c = getch()))
-            ;
-    }
-    s[i] = '\0';
-    if(c != EOF)
-        ungetch(c);
-    return NUMBER;
-}
-
-#define BUFSIZE 100
-
-int bufp = 0; /* Next free position in buf */
-char buf[BUFSIZE];
-
-int getch(void)
-{
-    return (bufp > 0) ? buf[--bufp] : getchar();
-}
-
-void ungetch(int c)
-{
-    if(bufp >= BUFSIZE) {
-        printf("ungetch: too many characters \n");
-    } else {
-        buf[bufp++] = c;
-    }
 }
 
