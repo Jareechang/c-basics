@@ -37,3 +37,4 @@ To convert a digit's character set to the digit value itself, you can rely on th
 that digits are always stored sequentially and increasingly and just subtract by '0' (ASCII eqv - 48).
 
 ## Pointers
+asdf
