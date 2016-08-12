@@ -36,4 +36,4 @@ Char is equivalent to "one-byte-long integer", so they can hold values between [
 To convert a digit's character set to the digit value itself, you can rely on the property of the character sets
 that digits are always stored sequentially and increasingly and just subtract by '0' (ASCII eqv - 48).
 
-
+## Pointers
