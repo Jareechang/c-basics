@@ -6,8 +6,19 @@
 
 char *lineptr[MAXLINES];
 
+/* sort the lines */
 int main()
 {
-    print_lines("hello");
-    return 0;
+    int nlines; // numbers of input lines
+
+    printf("initiating program...\n");
+
+    if((nlines = readlines(lineptr, MAXLINES)) > 0) {
+        qsort(lineptr, 0, nlines-1);
+        writelines(lineptr,nlines);
+        return 0;
+    }else {
+        printf("error: input too large to sort\n");
+        return 1;
+    }
 }

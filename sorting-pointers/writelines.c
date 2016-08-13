@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+#include "custom_libs.h"
+
+void writelines(char *lineptr[], int nlines)
+{
+    int i;
+
+    for(i = 0; i < nlines; i++)
+        printf("%s\n", lineptr[i]);
+}
+
