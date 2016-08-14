@@ -3,4 +3,4 @@ Vagrantfile
 .vagrant/
 *
 !*.c
-!*.txt
+!*.md
