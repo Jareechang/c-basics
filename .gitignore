@@ -4,3 +4,4 @@ Vagrantfile
 *
 !*.c
 !*.md
+!sorting-pointers/
