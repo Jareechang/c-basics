@@ -27,7 +27,6 @@ void pretty_p(char arr[], int lim)
     while(++i < lim)
         printf("%d ", arr[i]);
         printf("]\n");
-
 }
 
 void q_sort(char arr[], int low, int hi)
