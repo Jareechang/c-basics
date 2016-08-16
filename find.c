@@ -5,6 +5,8 @@
 int get_line(char *line, int max);
 void print_char(char *line);
 
+/* find: parses a string with a pattern, 
+ * and return the string if matches (grep implmentation) */
 int main(int argc, char *argv[])
 {
     char line[MAXLINE];
