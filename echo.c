@@ -2,17 +2,15 @@
 
 /* append_space: append spaces in between while not i hasn't
  * reach the end (argc) */
-void append_space(int i, argc)
+char *append_space(int argc)
 {
-    return (i < argc - 1) ? " " : "";
+    return !(argc == 1) ? " " : "";
 }
 
 int main(int argc, char *argv[])
 {
-    int i = 1;
-    while(i < argc) {
-        printf("%s%s", argv[i], append_space(i, argc));
-        i++;
+    while(argc-- > 0) {
+        printf("%s%s", *++argv, append_space(argc));
     }
     printf("\n");
     return 0;
