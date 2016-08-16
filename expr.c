@@ -65,17 +65,3 @@ int pop(void)
         return 0;
     }
 }
-
-int get_line(char *line, int max)
-{
-    int i, c;
-    i = 0;
-    while((c = getchar()) != EOF) {
-        line[i++] = c;
-        if(c == '\n') {
-            break;
-        }
-    }
-    line[i] = '\0';
-    return i;
-}
