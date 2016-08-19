@@ -4,7 +4,6 @@
 
 #define HASHSIZE 101
 
-
 struct nlist {
     struct nlist *next; // Next entry in the chain (incase of hash-key collision)
     char *name; // defined named
@@ -45,8 +44,6 @@ int main(void)
     for(np = hashtab[hash(ptr)]; np != NULL; np = np->next) {
         printf("definition: %s\n", np->defn);
     }
-
-    /*printf("word: %s, definition: %s\n", np->name, np->next->defn);*/
     return 0;
 }
 
@@ -101,7 +98,6 @@ struct nlist *install(char *name, char *defn)
 char *str_dup(char *s)    // make a duplicate of s
 {
     char *p;
-
     p = (char *) malloc(strlen(s)+1);   // +1 for '\0'
     if (p != NULL)
         strcpy(p, s);
