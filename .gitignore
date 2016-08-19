@@ -5,3 +5,4 @@ Vagrantfile
 !*.c
 !*.md
 !sorting-pointers/
+test.c
