@@ -15,7 +15,6 @@ struct tnode  {
 
 struct tnode *add_tree(struct tnode *, char *);
 void tree_print(struct tnode*);
-/*int get_word(char *, int);*/
 
 struct tnode *talloc(void);
 char *str_dup(char *);
@@ -71,7 +70,6 @@ struct tnode *talloc(void)
 }
 
 /* str_dup: make a duplicate  */
-
 char *str_dup(char *s)
 {
     char *p;
